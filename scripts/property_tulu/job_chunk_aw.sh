@@ -1,11 +1,11 @@
 #!/bin/bash
-set -a && source .env && set +a
 #PBS -q normal
 #PBS -N prop-chunk_aw
 #PBS -l select=1:ncpus=4:mem=64gb
 #PBS -l walltime=24:00:00
 #PBS -j oe
 #PBS -P personal-clar0092
+set -a && source .env && set +a
 
 cd scratch/acu
 module load miniforge3

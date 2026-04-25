@@ -1,16 +1,16 @@
 #!/bin/bash
-set -a && source .env && set +a
 #PBS -q normal
 #PBS -j oe
 #PBS -l select=1:ncpus=16:ngpus=1
 #PBS -l walltime=4:00:00
 #PBS -N ppl-1250
 #PBS -P personal-clar0092
+set -a && source .env && set +a
 
 # ── Config ────────────────────────────────────────────────────────────────────
 MODEL_NAME="yukiwuki/Llama-3.2-Tulu-3-1B-DPO-cont"
 REVISION="llama_1b_dpo_step_1250"
-DATA_PATH="data/context_parametric_conflict_renamed.csv"
+DATA_PATH="data/cqa.csv"
 
 module load miniforge3
 module load cuda/12.2.1

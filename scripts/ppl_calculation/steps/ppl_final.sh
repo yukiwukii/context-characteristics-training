@@ -3,14 +3,14 @@
 #PBS -j oe
 #PBS -l select=1:ncpus=16:ngpus=1
 #PBS -l walltime=4:00:00
-#PBS -N ppl-dpo
+#PBS -N ppl-final
 #PBS -P personal-clar0092
 set -a && source .env && set +a
 
 # ── Config ────────────────────────────────────────────────────────────────────
-MODEL_NAME="allenai/Llama-3.1-Tulu-3-8B-DPO"
-DATA_PATH="data/druid.csv"
-REVISION="main"
+MODEL_NAME="yukiwuki/Llama-3.2-Tulu-3-1B-DPO-cont"
+REVISION="llama_1b_dpo"
+DATA_PATH="data/cqa.csv"
 
 module load miniforge3
 module load cuda/12.2.1

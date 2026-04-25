@@ -1,11 +1,11 @@
 #!/bin/bash
-set -a && source .env && set +a
 #PBS -q normal
 #PBS -j oe
 #PBS -l select=1:ncpus=16:ngpus=1
 #PBS -l walltime=2:00:00
 #PBS -N sft-cr-11000
 #PBS -P personal-clar0092
+set -a && source .env && set +a
 
 DATA_FILE="data/context_parametric_conflict_renamed.csv"
 SAVE_FOLDER="data/cr-full"
