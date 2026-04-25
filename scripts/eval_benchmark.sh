@@ -1,4 +1,5 @@
 #!/bin/bash
+set -a && source .env && set +a
 MODEL_NAME="meta-llama/Llama-3.2-1B"
 RESULTS_DIR="data/benchmark/${MODEL_NAME//\//_}"
 mkdir -p "$RESULTS_DIR"
@@ -49,7 +50,6 @@ export LD_PRELOAD=/home/users/ntu/clar0092/scratch/envs/persona/lib/libstdc++.so
 export PYTHONPATH=\$PWD:\$PYTHONPATH
 export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
-hf auth login --token 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
 mkdir -p logs
 python src/get_model_predictions/eval_benchmark.py '$MODEL_NAME' '$REVISION' '$OUTFILE'
 EOF
