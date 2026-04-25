@@ -7,9 +7,9 @@
 #PBS -P personal-clar0092
 
 DATA_FILE="data/context_parametric_conflict_renamed.csv"
-SAVE_FOLDER="data/cr-full"
+SAVE_FOLDER="data/stages/context_reliance"
 USE_EVIDENCE="yes"
-MODEL_NAME="meta-llama/Llama-3.2-1B-Instruct"
+MODEL_NAME="allenai/OLMo-2-1124-7B-Instruct"
 PROMPT_NAME="context_reliance_w_ev_acc"
 
 module load miniforge3

@@ -3,13 +3,13 @@
 #PBS -j oe
 #PBS -l select=1:ncpus=16:ngpus=1
 #PBS -l walltime=4:00:00
-#PBS -N ppl-7000
+#PBS -N ppl-2750
 #PBS -P personal-clar0092
 
 # ── Config ────────────────────────────────────────────────────────────────────
-MODEL_NAME="yukiwuki/open_instruct_dev"
-REVISION="llama_1b_sft_step_7000"
-DATA_PATH="data/druid.csv"
+MODEL_NAME="yukiwuki/Llama-3.2-Tulu-3-1B-DPO-cont"
+REVISION="llama_1b_dpo_step_2750"
+DATA_PATH="data/context_parametric_conflict_renamed.csv"
 
 module load miniforge3
 module load cuda/12.2.1
@@ -20,7 +20,7 @@ export HF_HOME=/home/users/ntu/clar0092/scratch
 export BNB_CUDA_VERSION=122
 export LD_PRELOAD=/home/users/ntu/clar0092/scratch/envs/persona/lib/libstdc++.so.6
 export PYTHONPATH=$PWD:$PYTHONPATH
-hf auth login --token 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
+hf auth login --token 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
 
 mkdir -p logs
 

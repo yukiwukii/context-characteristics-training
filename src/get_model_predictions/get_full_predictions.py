@@ -93,7 +93,7 @@ def predict_veracity(file_path, save_folder, use_evidence, model_code, prompt_na
     data["generated_answer"] = answers
     data = data.drop(columns=["prompt"])
 
-    MODEL_NICKNAME = model_code.split('/')[1].split('-')[0]
+    MODEL_NICKNAME = model_code.split('/')[1]
     filename = f'{MODEL_NICKNAME}_preds_{revision}_use_evidence_{use_evidence}_prompt_{prompt_name}.csv'
     data.to_csv(os.path.join(save_folder, filename))
 

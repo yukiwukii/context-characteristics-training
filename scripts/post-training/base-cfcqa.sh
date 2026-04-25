@@ -6,7 +6,7 @@
 #PBS -N base-cfcqa 
 #PBS -P personal-clar0092
 
-DATA_FILE="data/cf-cqa-few-shot.csv"
+DATA_FILE="data/cqa.csv"
 SAVE_FOLDER="data/res/base"
 USE_EVIDENCE="no"
 MODEL_NAME="allenai/OLMo-2-0425-1B"
@@ -21,4 +21,4 @@ export BNB_CUDA_VERSION=122
 
 hf auth login --token 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
 
-python -m src.get_model_predictions.get_model_predictions --data_file ${DATA_FILE} --save_folder ${SAVE_FOLDER} --use_evidence ${USE_EVIDENCE} --model_name ${MODEL_NAME} --prompt_name ${PROMPT_NAME}
+python -m src.get_model_predictions.get_full_predictions --data_file ${DATA_FILE} --save_folder ${SAVE_FOLDER} --use_evidence ${USE_EVIDENCE} --model_name ${MODEL_NAME} --prompt_name ${PROMPT_NAME}

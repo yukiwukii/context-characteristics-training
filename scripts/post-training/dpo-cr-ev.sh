@@ -7,10 +7,11 @@
 #PBS -P personal-clar0092
 
 DATA_FILE="data/context_parametric_conflict_renamed.csv"
-SAVE_FOLDER="data/cr-full/dpo"
+SAVE_FOLDER="data/stages/context_reliance"
 USE_EVIDENCE="yes"
-MODEL_NAME="allenai/Llama-3.1-Tulu-3-8B-DPO"
+MODEL_NAME="allenai/OLMo-2-1124-7B-DPO"
 PROMPT_NAME="context_reliance_w_ev_acc"
+
 
 module load miniforge3
 conda activate persona

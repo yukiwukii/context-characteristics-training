@@ -6,11 +6,11 @@
 #PBS -N dpo-750
 #PBS -P personal-clar0092
 
-DATA_FILE="data/cqa.csv"
-SAVE_FOLDER="data/dpo/conflict_qa"
+DATA_FILE="data/druid.csv"
+SAVE_FOLDER="data/dpo/druid"
 USE_EVIDENCE="yes"
 MODEL_NAME="yukiwuki/Llama-3.2-Tulu-3-1B-DPO-cont"
-PROMPT_NAME="context_reliance_w_ev_acc"
+PROMPT_NAME="pythia_evidence_prompt_0_shot_no_claimant"
 REVISION="llama_1b_dpo_step_750"
 
 module load miniforge3
@@ -20,6 +20,6 @@ export HF_HUB_CACHE=/home/users/ntu/clar0092/scratch
 export HF_HOME=/home/users/ntu/clar0092/scratch
 export BNB_CUDA_VERSION=122
 
-hf auth login --token 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
+hf auth login --token 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
 
 python -m src.get_model_predictions.get_full_predictions --data_file ${DATA_FILE} --save_folder ${SAVE_FOLDER} --use_evidence ${USE_EVIDENCE} --model_name ${MODEL_NAME} --prompt_name ${PROMPT_NAME} --revision ${REVISION}
